@@ -9,12 +9,6 @@ import Home from "./pages/Home";
 import Management from "./pages/Management";
 import RulesCNN from "./pages/RulesCNN";
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
