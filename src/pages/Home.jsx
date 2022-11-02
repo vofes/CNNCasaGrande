@@ -1,26 +1,29 @@
 import React from "react";
+import styled from 'styled-components';
+
+// import background from '../images/mainBackground.jpg';
+// const BackgroundImage = styled.div `
+//   height: 100%;
+//   width: 100%;
+//   transform: skewX(-80deg);
+//   overflow: hidden;
+//   position: fixed;
+//   background-color: white;
+//   left: -.25em;
+//   transform-origin: 0 100%;
+//   top: 0px;
+// `;
+
+// const UnRotImage = styled.img `
+//   width: 100%;
+//   height: 100%;
+//   position: fixed; 
+//   transform-origin: inherit;
+// `;
 
 function Home() {
   return (
-    <div className="home">
-      <div className="container">
-        <div className="row align-items-center my-5">
-          <div className="col-lg-7">
-            <img
-              className="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
-              alt=""
-            />
-          </div>
-          <div className="col-lg-5">
-            <h1 className="font-weight-light">Home</h1>
-            <p>
-
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <h1>Main page</h1>
   );
 }
 

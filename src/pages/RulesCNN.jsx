@@ -1,13 +1,9 @@
 import React from "react";
 
-function Blog() {
+function RulesCNN() {
   return (
-    <div className="home">
-      <div class="container">
-        <h1 className="text-center mt-5">Blog page</h1>
-      </div>
-    </div>
+      <h1>RulesCNN page</h1>
   );
 }
 
-export default Blog;
+export default RulesCNN;
