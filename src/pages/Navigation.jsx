@@ -1,109 +1,78 @@
-import React, { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import { LogoContainer, NavigationBar, LeftPart, RowList, ColumnList, LinkContainer, NdA, NsLi, MenuButton, MenuIcon } from './NavigationStyle';
-import logo from '../images/navigationLogo.png';
-import menuIcon from '../images/menuIcon.png';
-import useWindowDimensions from './Window';
+import React from "react";
+import { Link, Nav, TopBar, HamburgerContainer, InvisibleButton } from "./NavigationStyle";
+import { isMobile } from "react-device-detect";
 
-const ExternalLink = (props) => {
-  return (
-    <LinkContainer style ={{
-      paddingBottom: (props.wrapText === false) ? "25px" : "0px",
-    }}>
-      <NsLi>
-        <NdA href={props.to}>
-          {props.wrapText === true ? props.name.replaceAll(' ', '\n') : props.name}
-        </NdA>
-      </NsLi>
-    </LinkContainer>
-  );
-};
+import LogoIcon from "../images/navigationLogo.png";
+import MenuIcon from "../images/menuIcon.png";
 
-const PageLink = (props) => {
-  return (
-    <LinkContainer style ={{
-      paddingBottom: (props.wrapText === false) ? "25px" : "0px",
-    }}>
-      <NsLi>
-        {/* Styled Components not working with NavLink */}
-        <NavLink to={props.to} onClick={() => props.onClick(props.to)} style={{
-          textDecoration: "none", 
-          color: (props.currentPath === props.to) ? "orange" : "white"
-        }}> 
-          {props.wrapText === true ? props.name.replaceAll(' ', '\n') : props.name}
-        </NavLink>
-      </NsLi>
-    </LinkContainer>
-  );
-};
-
-const Links = (props) => {
+const Links = () => {
   return [
-      <PageLink     name="ГЛАВНАЯ СТРАНИЦА" wrapText={props.wrapText} to="/"            currentPath={props.currentPath} onClick={props.setCurrentPath}/>,
-      <ExternalLink name="ОНЛАЙН ТЕСТЫ"     wrapText={props.wrapText} to="https://forum.arizona-rp.com/threads/4774981/"/>,
-      <PageLink     name="ПРАВИЛА СМИ"      wrapText={props.wrapText} to="/rulesCNN"    currentPath={props.currentPath} onClick={props.setCurrentPath}/>,
-      <ExternalLink name="РЕКЛАМНЫЕ УСЛУГИ" wrapText={props.wrapText} to="https://forum.arizona-rp.com/threads/5313489/"/>,
-      <PageLink     name="РУКОВОДСТВО"      wrapText={props.wrapText} to="/management"  currentPath={props.currentPath} onClick={props.setCurrentPath}/>,
-      <ExternalLink name="ПРОЧЕЕ"           wrapText={props.wrapText} to="https://forum.arizona-rp.com/forums/1804/"/>
-  ]
+    <Link innerHTML="ГЛАВНАЯ СТРАНИЦА"  to="/"/>,
+    <Link innerHTML="ОНЛАЙН ТЕСТЫ"      to="https://forum.arizona-rp.com/threads/4774981/"/>,
+    <Link innerHTML="ПРАВИЛА СМИ"       to="/rulesCNN"/>,
+    <Link innerHTML="РЕКЛАМНЫЕ УСЛУГИ"  to="https://forum.arizona-rp.com/threads/5313489/"/>,
+    <Link innerHTML="РУКОВОДСТВО"       to="/management"/>,
+    <Link innerHTML="ПРОЧЕЕ"            to="https://forum.arizona-rp.com/forums/1804/"/>,
+  ];
 };
 
-function LinksList(props) {
-  if(props.direction === "row")
+const Logo = () => {
+  return (
+    <Link 
+      innerHTML={(<img src={LogoIcon} width="35px" height="35px"></img>)} 
+      to="/"
+    />
+  );
+};
+
+const MenuButton = (props) => {
+  if(props.hide === false)
   {
-    return(
-      <RowList>
-        <Links currentPath={props.currentPath} setCurrentPath={props.setCurrentPath} wrapText={true}></Links>
-      </RowList>
+    return (
+      <InvisibleButton onClick={props.onClick}>
+        <img src={MenuIcon} width="35px" height="35px"></img>
+      </InvisibleButton>
     );
   }
+};
 
-  return (
-    <ColumnList>
-      <Links currentPath={props.currentPath} setCurrentPath={props.setCurrentPath} wrapText={false}></Links>
-    </ColumnList>
-  );
-}
+const DesktopLinks = (props) => {
+  if(props.hide === false)
+  {
+    return <Links/>;
+  }
+};
 
+const MobileHamburger = (props) => {
+  if(props.hide === false)
+  {
+    return(
+      <HamburgerContainer>
+        <Links/>
+      </HamburgerContainer>
+    );
+  }
+};
 
-// Navigation
-function Navigation() {
-  // simple hook
-  const [currentPath, setCurrentPath] = useState(useLocation().pathname);
-
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(!open);
+function Navigation() 
+{
+  // hooks
+  const [menuOpen, menuSet] = React.useState(false);
+  const toggleMenu = () => {
+    menuSet(!menuOpen);
   };
 
-  const { width } = useWindowDimensions();
-
   return (
-    <div>
-      <NavigationBar>
-            <LeftPart>
-              <LogoContainer>
-                <NavLink className="navbar-brand" to="/">
-                  <img src={logo} alt="Logo" onClick={() => setCurrentPath("/")}></img>
-                </NavLink>
-              </LogoContainer>
-              {width > 1000 ? (<LinksList direction="row" currentPath={currentPath} setCurrentPath={setCurrentPath}/>) : null}
-
-            </LeftPart>
-
-            {width <= 1000 ? (
-            <MenuButton onClick={handleOpen}>
-              <MenuIcon src={menuIcon}></MenuIcon>
-            </MenuButton>
-            ) : null}
-
-      </NavigationBar>
-
-      {open && width <= 1000 ? (
-        <LinksList direction="column" currentPath={currentPath} setCurrentPath={setCurrentPath}/>
-      ) : null}
-
-    </div>
+    <Nav>
+      <TopBar>
+        <div>
+          <Logo/>
+          <DesktopLinks hide={isMobile}/>
+        </div>
+        <MenuButton hide={!isMobile} onClick={toggleMenu}/>
+      </TopBar>
+      <MobileHamburger hide={!menuOpen || !isMobile}/>
+    </Nav>
   );
 }
 
