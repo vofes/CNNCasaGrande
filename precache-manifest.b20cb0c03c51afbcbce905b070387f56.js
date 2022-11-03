@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "04a532e304ea4edb1f47",
+    "revision": "9393705e95f437e96788",
     "url": "/CNNCasaGrande/static/css/main.7118f6a5.chunk.css"
   },
   {
-    "revision": "04a532e304ea4edb1f47",
-    "url": "/CNNCasaGrande/static/js/main.b284f8a2.chunk.js"
+    "revision": "9393705e95f437e96788",
+    "url": "/CNNCasaGrande/static/js/main.43a227e8.chunk.js"
   },
   {
     "revision": "b5b02a32a1450850e597",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/CNNCasaGrande/static/media/impact.0d23886d.woff"
   },
   {
-    "revision": "a3d9dda80dda28c8cd6977485262deb7",
+    "revision": "c480d0a34f5421b726fa1553400ba2f7",
     "url": "/CNNCasaGrande/index.html"
   }
 ];
