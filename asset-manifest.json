@@ -1,17 +1,17 @@
 {
-  "files": {
-    "main.css": "/CNNCasaGrande/static/css/main.0b089c95.css",
-    "main.js": "/CNNCasaGrande/static/js/main.5f35708c.js",
-    "static/js/787.cd8f659e.chunk.js": "/CNNCasaGrande/static/js/787.cd8f659e.chunk.js",
-    "static/media/impact.woff": "/CNNCasaGrande/static/media/impact.8a938c0f51348b56e9f3.woff",
-    "static/media/navigationBackground.png": "/CNNCasaGrande/static/media/navigationBackground.e5727173d8da38f4f37d.png",
-    "index.html": "/CNNCasaGrande/index.html",
-    "main.0b089c95.css.map": "/CNNCasaGrande/static/css/main.0b089c95.css.map",
-    "main.5f35708c.js.map": "/CNNCasaGrande/static/js/main.5f35708c.js.map",
-    "787.cd8f659e.chunk.js.map": "/CNNCasaGrande/static/js/787.cd8f659e.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.0b089c95.css",
-    "static/js/main.5f35708c.js"
-  ]
+  "main.css": "/CNNCasaGrande/static/css/main.7118f6a5.chunk.css",
+  "main.js": "/CNNCasaGrande/static/js/main.b284f8a2.chunk.js",
+  "main.js.map": "/CNNCasaGrande/static/js/main.b284f8a2.chunk.js.map",
+  "runtime~main.js": "/CNNCasaGrande/static/js/runtime~main.bd10b9ed.js",
+  "runtime~main.js.map": "/CNNCasaGrande/static/js/runtime~main.bd10b9ed.js.map",
+  "static/js/2.753727d0.chunk.js": "/CNNCasaGrande/static/js/2.753727d0.chunk.js",
+  "static/js/2.753727d0.chunk.js.map": "/CNNCasaGrande/static/js/2.753727d0.chunk.js.map",
+  "static/js/3.fa6a646c.chunk.js": "/CNNCasaGrande/static/js/3.fa6a646c.chunk.js",
+  "static/js/3.fa6a646c.chunk.js.map": "/CNNCasaGrande/static/js/3.fa6a646c.chunk.js.map",
+  "index.html": "/CNNCasaGrande/index.html",
+  "precache-manifest.562c973974bbba4f2d49694f89b5641f.js": "/CNNCasaGrande/precache-manifest.562c973974bbba4f2d49694f89b5641f.js",
+  "service-worker.js": "/CNNCasaGrande/service-worker.js",
+  "static/css/main.7118f6a5.chunk.css.map": "/CNNCasaGrande/static/css/main.7118f6a5.chunk.css.map",
+  "static/media/index.css": "/CNNCasaGrande/static/media/impact.0d23886d.woff",
+  "static/media/navigationBackground.png": "/CNNCasaGrande/static/media/navigationBackground.bcf2424c.png"
 }
