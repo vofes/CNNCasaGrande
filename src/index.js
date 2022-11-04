@@ -4,19 +4,23 @@ import "./index.css";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
-import Navigation from "./pages/Navigation";
 import Home from "./pages/Home";
 import Management from "./pages/Management";
 import RulesCNN from "./pages/RulesCNN";
+import RulesPRO from "./pages/RulesPRO";
+
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <HashRouter>
-    <Navigation/>
     <Routes>
       <Route exact path="/" element={<Home />} />
       <Route exact path="/rulesCNN" element={<RulesCNN />}/>
+      <Route exact path="/rulesCNN/PRO" element={<RulesPRO />}/>
       <Route exact path="/management" element={<Management />}/>
     </Routes>
   </HashRouter>
