@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { ULink } from "./UniversalStyle";
 
-// Need to be separated.
 import LogoImage from "../images/logo.png";
 
 const NavContainer = styled.div `
@@ -21,6 +21,7 @@ const Nav = styled.nav `
 
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 
@@ -30,48 +31,22 @@ const Nav = styled.nav `
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
   }
 
   ul li {
-    margin-right: 15px;
+    
     padding-top: 15px;
     padding-bottom: 15px;
-
     font-family: 'Source Sans Pro';
     font-size: 1.5rem;
     text-align: center;
   }
 `;
 
-export const ULink = (props) => { // to
-    const path = props.to;
-    var linkStyle = 
-    {
-      textDecoration: "none",
-      color: "white"
-    };
-    if(props.style != null)
-        linkStyle = props.style;
 
-    if(path.includes("https://") === true) 
-    {
-      return (
-        <a href={path} style={linkStyle}>
-          {props.children}
-        </a>
-      );
-    }
-  
-    return (
-      <NavLink to={path} style={linkStyle}>
-        {props.children}
-      </NavLink>
-    );
-};
 
 export const HighlightLink = (props) => {
-    const path = props.to;
+    const path = props.to || "/404";
     var hightLight = useLocation().pathname === path;
     if("/" + useLocation().pathname.split("/")[1] === path)
         hightLight = true;
@@ -107,14 +82,14 @@ function NavBar()
     return (
     <NavContainer>
       <Nav>
-        <Logo><img alt="" src={LogoImage}></img></Logo>
+        <ULink to="/"><Logo><img alt="" src={LogoImage}></img></Logo></ULink>
         <ul>
             <li><HighlightLink to="/">Главная</HighlightLink></li>
             <li><HighlightLink to="/news">Новости</HighlightLink></li>
             <li><HighlightLink to="/rulesCNN">Правила СМИ</HighlightLink></li>
             <li><HighlightLink to="https://forum.arizona-rp.com/threads/4774981/">Онлайн тесты</HighlightLink></li>
             <li><HighlightLink to="/management">Руководство</HighlightLink></li>
-            <li><HighlightLink to="/management">Прочее</HighlightLink></li>
+            <li><HighlightLink >Прочее</HighlightLink></li>
         </ul>
       </Nav>
     </NavContainer>
