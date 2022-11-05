@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/CNNCasaGrande/precache-manifest.4c6d79be3bab7b29ec8646bf45fb096a.js"
+  "/CNNCasaGrande/precache-manifest.919c0bca55b16504694b4fea9d5c4339.js"
 );
 
 workbox.clientsClaim();
