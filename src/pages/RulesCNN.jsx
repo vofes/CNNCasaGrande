@@ -1,76 +1,108 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
 
 import Header from "./Header";
 import { PageContainer, Page } from "./UniversalStyle";
+import BackgroundImage from "../images/background5.jpg";
 
-import BackgroundImage from "../images/background.png";
+import { Title } from "./UniversalStyle";
+import { 
+  MiniNavBar, SelectRuleButton, 
+  Rule, RuleNumber, RuleText, RulesContent,
+  Quote, Spoiler, SpoilerButton, SpoilerContainer 
+} from "./RulesStyle";
 
-const TransperentButton = styled.button `
-  background-color: transparent;
-  border: 0;
-  font-family: 'Source Sans Pro';
-  font-size: 1.25rem;
-  color: white;
-  cursor: pointer;
-`;
+import PROJson from "./RulesCNN/PRO.json";
+import PPGJson from "./RulesCNN/PPG.json";
+import PPEJson from "./RulesCNN/PPE.json";
+import PPAJson from "./RulesCNN/PPA.json";
+import EYMJson from "./RulesCNN/EYM.json";
 
-
-function MiniLink(props)
+function ParseQuote(quote)
 {
-  var style = props.selectedSection === props.section ? { borderColor: "white" } : null;
-
-  return(
-    <div className="miniLink" style={style}>
-      <TransperentButton onClick={() => props.onClick(props.section)}>
-        {props.children}
-        <p>{props.section}</p>
-      </TransperentButton>
-    </div>
+  return (
+    <Quote>
+      {
+        quote.map( (text, index) => {
+          return(<div key={index}>{text}</div>);
+        })
+      }
+    </Quote>
   );
 }
 
-const MiniNavBar = styled.nav `
-  .miniLink {
-    margin-top: 25px;
-    padding: 0px 25px;
-    border-bottom: 2px solid;
-    border-color: gray;
+function ParseSpoiler(props)
+{
+  const [isOpen, Open] = useState(false);
 
-    transition: border-color 0.5s;
+  function ToggleOpen()
+  {
+    Open(!isOpen);
+  }
 
-    &:hover {
-      border-color: #bfbfbf;
-    }
+  return (
+    <Rule>
+      <SpoilerButton active={isOpen} onClick={() => ToggleOpen()}>{props.title}</SpoilerButton>
+      <SpoilerContainer showDropdown={isOpen}>
+        {
+          <Spoiler>
+          {
+            props.content.map( (text, index) => {
+              return(<div key={index}>{text}</div>);
+            })
+          }
+          </Spoiler>
+        }
+      </SpoilerContainer>
+    </Rule>
+  );
+}
+
+function ParseJSON(json)
+{
+  return (
+    <div>
+      {
+        json.map( (section) => {
+          return (
+            <div key={section.chapter}>
+              <Title style={{marginBottom: "5px"}}> 
+                { section.chapter + " " + section.desc} 
+              </Title>
+              {
+                section.content.map( (rule, index) => {
+                  return (
+                    <Rule key={index}>
     
-    ${TransperentButton} {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
+                      <RuleNumber>
+                        {rule.number + " "}
+                        <RuleText>{rule.text}</RuleText>
+                      </RuleNumber>
+                      
+                      { rule.quote ? ParseQuote(rule.quote) : null }
+                      { rule.spoiler ? (<ParseSpoiler title={rule.spoiler.title} content={rule.spoiler.content}></ParseSpoiler>) : null }
+    
+                    </Rule>
+                  );
+                })
+              }
+            </div>
+          )
+        })
+      }
+    </div>
+  )
+}
 
-  }
-
-  p {
-    margin: 0;
-    color: gray;
-    font-size: 1rem;
-  }
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
-const RulesContent = styled.div `
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-`;
+var RuleMap = new Map();
+RuleMap.set("ПРО", ParseJSON(PROJson));
+RuleMap.set("ППЭ", ParseJSON(PPGJson));
+RuleMap.set("ППА", ParseJSON(PPEJson));
+RuleMap.set("ППГ", ParseJSON(PPAJson));
+RuleMap.set("ЕУМ", ParseJSON(EYMJson));
 
 function RulesCNN() 
 {
   const [selectedSection, SelectSection] = React.useState("ПРО");
-
 
   return (
     <div>
@@ -78,24 +110,26 @@ function RulesCNN()
       <PageContainer>
         <Page>
           <MiniNavBar>
-            <MiniLink section={"ПРО"} onClick={SelectSection} selectedSection={selectedSection}>
+            <SelectRuleButton section={"ПРО"} onClick={SelectSection} selectedSection={selectedSection}>
               Редактирование объявления
-            </MiniLink>
-            <MiniLink section={"ППЭ"} onClick={SelectSection} selectedSection={selectedSection}>
+            </SelectRuleButton>
+            <SelectRuleButton section={"ППЭ"} onClick={SelectSection} selectedSection={selectedSection}>
               Эфиров
-            </MiniLink>
-            <MiniLink section={"ППА"} onClick={SelectSection} selectedSection={selectedSection}>
+            </SelectRuleButton>
+            <SelectRuleButton section={"ППА"} onClick={SelectSection} selectedSection={selectedSection}>
               Аудио-Эфиров
-            </MiniLink>
-            <MiniLink section={"ППГ"} onClick={SelectSection} selectedSection={selectedSection}>
+            </SelectRuleButton>
+            <SelectRuleButton section={"ППГ"} onClick={SelectSection} selectedSection={selectedSection}>
               Продажа и печать газет
-            </MiniLink>
-            <MiniLink section={"ЕУМ"} onClick={SelectSection} selectedSection={selectedSection}>
+            </SelectRuleButton>
+            <SelectRuleButton section={"ЕУМ"} onClick={SelectSection} selectedSection={selectedSection}>
               Устав медиакорпорации
-            </MiniLink>
+            </SelectRuleButton>
           </MiniNavBar>
           <RulesContent>
-            {selectedSection}
+
+              { RuleMap.get(selectedSection) }
+
           </RulesContent>
         </Page>
       </PageContainer>

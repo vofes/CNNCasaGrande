@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Header from "./Header";
 import { PageContainer, Page, lightGrayColor, grayColor } from "./UniversalStyle";
 
-import BackgroundImage from "../images/background.png";
+import BackgroundImage from "../images/background3.jpg";
 
 const Post = styled.div `
     background-color: ${grayColor};

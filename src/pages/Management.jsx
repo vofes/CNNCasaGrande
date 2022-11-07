@@ -4,7 +4,7 @@ import Header from "./Header";
 import { PageContainer, Page } from "./UniversalStyle";
 import { SquareGrid, SquareButton } from "./UniversalStyle";
 
-import BackgroundImage from "../images/background.png";
+import BackgroundImage from "../images/background2.jpg";
 import PersonIcon from "../images/icon1.png";
 import NewsIcon from "../images/icon3.png";
 

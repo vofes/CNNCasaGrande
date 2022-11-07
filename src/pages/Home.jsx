@@ -6,7 +6,7 @@ import Header from "./Header";
 import { PageContainer, Page } from "./UniversalStyle";
 import { SquareGrid, SquareButton } from "./UniversalStyle";
 
-import BackgroundImage from "../images/background.png";
+import BackgroundImage from "../images/background2.jpg";
 import SteveHainesImage from "../images/SteveHaines.png";
 import PersonIcon from "../images/icon1.png";
 
@@ -47,7 +47,7 @@ function Home()
               СМИ - важный аспект политической жизни. 
               Именно от прессы зависит, какое мнение сложится о политическом деятеле.              
             </p>
-            <ULink to="/"><FlatButton>🖳 Наш форум</FlatButton></ULink>
+            <ULink to="https://forum.arizona-rp.com/forums/1804/"><FlatButton>🖳 Наш форум</FlatButton></ULink>
           </InfoBlock>
           <img alt="" src={SteveHainesImage}></img>
         </InfoBlockContainer>

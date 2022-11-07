@@ -130,6 +130,7 @@ export function SquareButton(props)
 export const PageContainer = styled.div `
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 `;
 
 export const Page = styled.div `
@@ -143,7 +144,7 @@ export const Title = styled.h1 `
     justify-content: center;
     text-align: center;
     font-family: 'Arial';
-    margin: 35px;
+    margin: 25px 0px;
 `;
 
 export const Line = styled.div `

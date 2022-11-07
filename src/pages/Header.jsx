@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Page, Title } from "./UniversalStyle";
+import { darkGrayColor, Page, Title } from "./UniversalStyle";
 import NavBar from "./NavBar";
 
 import MissingTexture from "../images/missingTexture.png"
@@ -9,6 +9,7 @@ const HeaderContainer = styled.div `
   display: flex;
   justify-content: center;
   width: 100%;
+  background-color: ${darkGrayColor};
   background-image: url(${props => props.background || MissingTexture});
   background-repeat: no-repeat;
   background-size: cover;

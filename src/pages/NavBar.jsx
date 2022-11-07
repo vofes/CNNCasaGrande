@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { ULink } from "./UniversalStyle";
 
-import LogoImage from "../images/logo.png";
+import LogoImage from "../images/logo.svg";
 
 const NavContainer = styled.div `
     width: 100%;
@@ -68,7 +68,7 @@ export const HighlightLink = (props) => {
     );
 }
 
-const Logo = styled.a `
+const Logo = styled.div `
   margin-right: 45px;
 
   img {
@@ -97,5 +97,3 @@ function NavBar()
 }
 
 export default NavBar;
-
-// ----------

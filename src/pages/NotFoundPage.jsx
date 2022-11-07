@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./Header";
 import { PageContainer, Page, Title, ULink } from "./UniversalStyle";
 
-import BackgroundImage from "../images/background.png";
+import BackgroundImage from "../images/background1.jpg";
 
 function NotFoundPage() 
 {

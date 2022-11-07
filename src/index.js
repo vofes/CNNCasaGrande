@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import News from "./pages/News";
 import Management from "./pages/Management";
 import RulesCNN from "./pages/RulesCNN";
-import RulesPRO from "./pages/RulesPRO";
 import NotFoundPage from "./pages/NotFoundPage";
 
 
@@ -24,9 +23,7 @@ root.render(
       <Route exact path="/" element={<Home />} />
       <Route exact path="/news" element={<News />}/>
       <Route exact path="/rulesCNN" element={<RulesCNN />}/>
-      <Route exact path="/rulesCNN/PRO" element={<RulesPRO />}/>
       <Route exact path="/management" element={<Management />}/>
-
     </Routes>
   </HashRouter>
 );
