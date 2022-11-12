@@ -9,10 +9,19 @@ const HeaderContainer = styled.div `
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: ${darkGrayColor};
+  position: relative;
+  /* background-color: ${darkGrayColor};
   background-image: url(${props => props.background || MissingTexture});
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+`;
+
+const Background = styled.img `
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
 `;
 
 const HeaderBlock = styled.div `
@@ -30,7 +39,8 @@ const HeaderBlock = styled.div `
 function Header(props)
 {
     return(
-        <HeaderContainer background={props.background}>
+      <HeaderContainer>
+        <Background src={ props.background || MissingTexture }></Background>
         <Page>
           <NavBar></NavBar>
           <HeaderBlock>

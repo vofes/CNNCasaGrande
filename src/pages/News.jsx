@@ -11,6 +11,12 @@ const Post = styled.div `
     padding: 15px;
     margin-top: 25px;
     border-radius: 15px;
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-style: italic;
+    }
 `;
 
 const Title = styled.h1 `
@@ -35,37 +41,24 @@ function News()
       <PageContainer>
         <Page>
             <Post>
-                <Date>05.11.2022</Date>
-                <Title>Update #1</Title>
+                <Date>30.10.2022</Date>
+                <Title>Update #19</Title>
                 <Content>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  
-                    <br/> sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                    <br/> magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
-                    <br/> et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                    <br/> no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-                    <br/> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
-                    <br/> diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-                    <br/> aliquyam erat, sed diam voluptua. At vero eos et accusam et justo 
-                    <br/> duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
-                    <br/> sanctus est Lorem ipsum dolor sit amet.
+                    - Онлайн-тесты были обновлены вопросы в практических частях тестов на ПРО и Устав, а так же на 5 ранг.
+                    <br/>- В онлайн-тестах добавлены 2 ранга: Куратор онлайн-аттестаций и Проверяющий онлайн-аттестаций.
                 </Content>
+                <Date>ɴᴏʀᴍᴀɴ sᴏᴘʀᴀɴᴏ</Date>
             </Post>
 
             <Post>
-                <Date>04.11.2022</Date>
-                <Title>Update #2</Title>
+                <Date>25.10.2022</Date>
+                <Title>Update #18</Title>
                 <Content>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
-                    et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
-                    diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et justo 
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
-                    sanctus est Lorem ipsum dolor sit amet.
+                    Из Правил Проведения Эфиров удален пункт:
+                    - "1.5. При проведении развлекательных эфиров запрещено использовать биндер".
+                    Подробнее - <a href="https://forum.arizona-rp.com/threads/4761678/post-27592693">https://forum.arizona-rp.com/threads/4761678/post-27592693</a>
                 </Content>
+                <Date>ɴᴏʀᴍᴀɴ sᴏᴘʀᴀɴᴏ</Date>
             </Post>
         </Page>
       </PageContainer>
