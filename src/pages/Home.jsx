@@ -23,12 +23,16 @@ const InfoBlock = styled.div`
     color: white;
     margin: 0;
   }
+
+  padding-bottom: 15px;
 `;
 
 const InfoBlockContainer = styled.div `
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 
 function Home() 

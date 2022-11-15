@@ -15,7 +15,7 @@ import PROJson from "./RulesCNN/PRO.json";
 import PPGJson from "./RulesCNN/PPG.json";
 import PPEJson from "./RulesCNN/PPE.json";
 import PPAJson from "./RulesCNN/PPA.json";
-import EYMJson from "./RulesCNN/EYM.json";
+import EYJson from "./RulesCNN/EY.json";
 import OtherJson from "./RulesCNN/Other.json";
 
 function ParseQuote(quote)
@@ -104,7 +104,7 @@ function ParseText(jsonTextObj)
   if(IsArray(jsonTextObj) === true)
   {
     return jsonTextObj.map( (line, index) => { 
-      return <RuleText>{line + '\n'}</RuleText>
+      return <RuleText key={index}>{line + '\n'}</RuleText>
     });
   }
 
@@ -155,7 +155,7 @@ RuleMap.set("ПРО", ParseJSON(PROJson));
 RuleMap.set("ППЭ", ParseJSON(PPEJson));
 RuleMap.set("ППА", ParseJSON(PPAJson));
 RuleMap.set("ППГ", ParseJSON(PPGJson));
-RuleMap.set("ЕУМ", ParseJSON(EYMJson));
+RuleMap.set("ЕУ", ParseJSON(EYJson));
 RuleMap.set("Прочее", ParseJSON(OtherJson));
 
 function RulesCNN() 
@@ -187,8 +187,8 @@ function RulesCNN()
             <SelectRuleButton section={"ППГ"} onClick={SelectSectionCookie} selectedSection={selectedSection}>
               Продажа и печать газет
             </SelectRuleButton>
-            <SelectRuleButton section={"ЕУМ"} onClick={SelectSectionCookie} selectedSection={selectedSection}>
-              Устав медиакорпорации
+            <SelectRuleButton section={"ЕУ"} onClick={SelectSectionCookie} selectedSection={selectedSection}>
+              Единый Устав
             </SelectRuleButton>
             <SelectRuleButton section={"Прочее"} onClick={SelectSectionCookie} selectedSection={selectedSection}>
               Прочее

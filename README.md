@@ -2,7 +2,9 @@
 
 CNN website hosted for the Arizona Casa Grande SAMP server
 
-## Overview
+Github-Pages Link: [https://vofes.github.io/CNNCasaGrande/](https://vofes.github.io/CNNCasaGrande/)
+
+## Overview {s}
 
 The site contains useful sections for CNN organization.
 
@@ -12,17 +14,18 @@ For example: rules, organization posts, quick links and news
 
 * React
 * React Router Dom
-* Styled Components 
+* Styled Components
 * React Device Detect
 
 ## How to setup
-Clone github repository: ``` git clone https://github.com/vofes/CNNCasaGrande ```
 
-Install all packages: ``` npm install ```
+Clone github repository: ``git clone https://github.com/vofes/CNNCasaGrande``
 
-Run the app in development mode: ``` npm start ```
+Install all packages: ``npm install``
 
-Build app for production and publish it on github-pages: ``` npm run deploy ```
+Run the app in development mode: ``npm start``
+
+Build app for production and publish it on github-pages: ``npm run deploy``
 
 ## Contact
 

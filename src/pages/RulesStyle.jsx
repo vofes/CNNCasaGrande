@@ -58,6 +58,7 @@ export const MiniNavBar = styled.nav `
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 export const Rule = styled.div `

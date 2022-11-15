@@ -30,7 +30,6 @@ const HeaderBlock = styled.div `
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 
     padding-bottom: 15px;
     padding-top: 15px;

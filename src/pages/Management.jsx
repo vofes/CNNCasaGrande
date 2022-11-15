@@ -18,7 +18,7 @@ function Management()
           <SquareGrid style={{marginTop: "15px"}}>
             <SquareButton to="https://vk.com/id167841825">
                 <img alt="" src={PersonIcon}></img>
-                <h3>Медиакорпорация</h3>
+                <h3>Министр ИП</h3>
                 <p>Управляющий: Robin_Sneyls</p>
             </SquareButton>
           </SquareGrid>
