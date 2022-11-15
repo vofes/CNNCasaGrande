@@ -4,7 +4,7 @@ CNN website hosted for the Arizona Casa Grande SAMP server
 
 Github-Pages Link: [https://vofes.github.io/CNNCasaGrande/](https://vofes.github.io/CNNCasaGrande/)
 
-## Overview {s}
+## Overview
 
 The site contains useful sections for CNN organization.
 
