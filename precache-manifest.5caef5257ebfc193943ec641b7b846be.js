@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "a4c1f2c8a2a5f2e2bec0",
+    "revision": "e62703dd4f600fda190c",
     "url": "/CNNCasaGrande/static/css/main.7d518730.chunk.css"
   },
   {
-    "revision": "a4c1f2c8a2a5f2e2bec0",
-    "url": "/CNNCasaGrande/static/js/main.de6f20e0.chunk.js"
+    "revision": "e62703dd4f600fda190c",
+    "url": "/CNNCasaGrande/static/js/main.49d54c82.chunk.js"
   },
   {
-    "revision": "fee8201b3ff919d05306",
-    "url": "/CNNCasaGrande/static/js/runtime~main.397dd88f.js"
+    "revision": "96dee46362c5b08b62f3",
+    "url": "/CNNCasaGrande/static/js/runtime~main.6feb0683.js"
   },
   {
-    "revision": "b23f27991bb012004650",
-    "url": "/CNNCasaGrande/static/js/2.5235f7d6.chunk.js"
+    "revision": "f9da70f08edf97af4f15",
+    "url": "/CNNCasaGrande/static/js/2.22f3a13e.chunk.js"
   },
   {
-    "revision": "31337860530f5d734991",
-    "url": "/CNNCasaGrande/static/js/3.da1cee14.chunk.js"
+    "revision": "5c91828069b8ac54b9b7",
+    "url": "/CNNCasaGrande/static/js/3.3f3b2502.chunk.js"
   },
   {
     "revision": "b36203d27590747415d6dc005d9ec63f",
@@ -132,7 +132,7 @@ self.__precacheManifest = [
     "url": "/CNNCasaGrande/static/media/PPG (9).6a9e1836.jpeg"
   },
   {
-    "revision": "ea677481279575f44384383bb9a8bd3e",
+    "revision": "6428011e367a6269c8efc9ba6b11af9c",
     "url": "/CNNCasaGrande/index.html"
   }
 ];
